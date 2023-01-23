@@ -17,7 +17,6 @@ function addTarefa() {
         main.innerHTML += novoItem;
         input.value = ""
         input.focus()
-        console.log(contador)
     }
 }
 
@@ -36,12 +35,18 @@ function deletar(id) {
 function tarefaConcluida(id) {
     var item = document.getElementById(id);
     var classe = item.getAttribute('class');
-    console.log(classe)
+    
     if(classe==="item") {
         item.classList.add('item-feito')
 
         var icone = document.getElementById('i'+id)
         icone.classList.remove(`fa-circle`)
         icone.classList.add('fa-circle-check')
-    }
+  } else {
+    item.classList.remove('item-feito')
+
+    var icone = document.getElementById('i'+id)
+    icone.classList.remove(`fa-circle-check`)
+    icone.classList.add('fa-circle')
 };
+}
