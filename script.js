@@ -35,18 +35,20 @@ function deletar(id) {
 function tarefaConcluida(id) {
     var item = document.getElementById(id);
     var classe = item.getAttribute('class');
-    
-    if(classe==="item") {
+
+    if (classe === "item") {
         item.classList.add('item-feito')
 
-        var icone = document.getElementById('i'+id)
+        var icone = document.getElementById('i' + id)
         icone.classList.remove(`fa-circle`)
         icone.classList.add('fa-circle-check')
-  } else {
-    item.classList.remove('item-feito')
+    } else {
+        item.classList.remove('item-feito')
 
-    var icone = document.getElementById('i'+id)
-    icone.classList.remove(`fa-circle-check`)
-    icone.classList.add('fa-circle')
-};
+        var icone = document.getElementById('i' + id)
+        icone.classList.remove(`fa-circle-check`)
+        icone.classList.add('fa-circle')
+    };
+
+    item.parentNode.appendChild(item)
 }
